@@ -45,7 +45,31 @@ public class RemoveDuplicate {
             }
         }
     }
+
+    private static ListNode deleteFirstNode(ListNode head) {
+        if (head == null) return head;
+
+        ListNode temp = head;
+        head = head.next;
+        temp.next = null;
+        return temp;
+    }
+
+    private static ListNode deleteLastNode(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode cur = head;
+        ListNode prev = null;
+        while (cur.next != null) {
+            prev = cur;
+            cur = cur.next;
+        }
+        prev.next = null;
+        return cur;
+    }
 }
+
+
 
 class ListNode {
     int val;
