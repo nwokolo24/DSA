@@ -1,11 +1,9 @@
 package trees;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Stack;
 
-public class BinaryTree {
+public class BinaryTreeTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(2);
@@ -30,7 +28,7 @@ public class BinaryTree {
     /*
     Below are the logic for iterative traversals of Binary Tree Data Structures
      */
-    private static ArrayList<Integer> preOrderTraversal(TreeNode root) {
+    public static ArrayList<Integer> preOrderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
 
         ArrayList<Integer> result = new ArrayList<>();
@@ -49,27 +47,27 @@ public class BinaryTree {
         return result;
     }
 
-    private static ArrayList<Integer> inorderTraversal(TreeNode root) {
+    public static ArrayList<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
 
         ArrayList<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
 
-        TreeNode temp = root;
-        while (!stack.isEmpty() || temp != null) {
-            if (temp != null) {
-                stack.push(temp);
-                temp = temp.left;
+        TreeNode current = root;
+        while (!stack.isEmpty() || current != null) {
+            if (current != null) {
+                stack.push(current);
+                current = current.left;
             } else {
-                temp = stack.pop();
-                result.add(temp.val);
-                temp = temp.right;
+                current = stack.pop();
+                result.add(current.val);
+                current = current.right;
             }
         }
         return result;
     }
 
-    private static ArrayList<Integer> postOrderTraversal(TreeNode root) {
+    public static ArrayList<Integer> postOrderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
 
         ArrayList<Integer> result = new ArrayList<>();
