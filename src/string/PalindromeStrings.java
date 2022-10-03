@@ -7,9 +7,9 @@ public class PalindromeStrings {
     public static void main(String[] args) {
         String str = "babad";
 
-        System.out.println(longestPalSubStringImproved(str));
+//        System.out.println(longestPalSubStringImproved(str));
 
-//        System.out.println(longestPalSubstring(str));
+        System.out.println(longestPalSubstring(str));
     }
     /*
     * Big O(n^3) solution
@@ -34,16 +34,11 @@ public class PalindromeStrings {
         int left = 0;
         int right = str.length() - 1;
 
-        StringBuilder sb = new StringBuilder();
-        for (char c : str.toCharArray())
-            sb.append(c);
-
-        while (left <= right) {
-            char temp = sb.charAt(left);
-            sb.setCharAt(left++, sb.charAt(right));
-            sb.setCharAt(right--, temp);
+        while (left < right) {
+            if (str.charAt(left++) != str.charAt(right--))
+                return false;
         }
-        return sb.toString().equals(str);
+        return true;
     }
 
     /*
