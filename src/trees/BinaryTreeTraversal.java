@@ -5,21 +5,21 @@ import java.util.Stack;
 
 public class BinaryTreeTraversal {
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(3);
         root.right = new TreeNode(6);
         root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
+        root.left.right = new TreeNode(4);
+        root.right.left = new TreeNode(7);
+        root.right.right = new TreeNode(8);
 
-        System.out.println("InorderTraversal Output");
-        System.out.println(inorderTraversal(root));
-        System.out.println();
-
-        System.out.println("PreOrderTraversal Output");
-        System.out.println(preOrderTraversal(root));
-        System.out.println();
+//        System.out.println("InorderTraversal Output");
+//        System.out.println(inorderTraversal(root));
+//        System.out.println();
+//
+//        System.out.println("PreOrderTraversal Output");
+//        System.out.println(preOrderTraversal(root));
+//        System.out.println();
 
         System.out.println("PostOrderTraversal Output");
         System.out.println(postOrderTraversal(root));
@@ -86,7 +86,8 @@ public class BinaryTreeTraversal {
                 if (temp == null) {
                     temp = stack.pop();
                     result.add(temp.val);
-                    // this logic takes care of skewed binary trees
+                    // if we are at the right of the root node, and that node is the
+                    // last node on the right of root node, then we process the node
                     while (!stack.isEmpty() && temp == stack.peek().right) {
                         temp = stack.pop();
                         result.add(temp.val);
