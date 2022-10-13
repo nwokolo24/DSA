@@ -9,6 +9,7 @@ public class MaxIncreaseSubsequence {
     }
     // arr = [10, 9, 2, 5, 3, 7, 101, 18]
     // dp = [1, 1, 1, 1, 1, 1, 1, 1]
+    // Dynamic programming approach
     private static int mis(int[] arr) {
         int[] dp = new int[arr.length];
         int longest = 1;
