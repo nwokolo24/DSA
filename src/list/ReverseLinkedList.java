@@ -1,5 +1,9 @@
 package list;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
@@ -13,20 +17,26 @@ public class ReverseLinkedList {
         two.next = three;
         three.next = four;
 
-        ListNode temp = head;
-        while (temp != null) {
-            System.out.print(temp.val + " -> ");
-            temp = temp.next;
-        }
+//        ListNode temp = head;
+//        while (temp != null) {
+//            System.out.print(temp.val + " -> ");
+//            temp = temp.next;
+//        }
+//
+//        System.out.println();
+//        System.out.println("After reversing Lineked List");
+//        ListNode newHead = reverse(head);
+//        temp = newHead;
+//        while (temp != null) {
+//            System.out.print(temp.val + " -> ");
+//            temp = temp.next;
+//        }
+        List<Integer> v = new ArrayList<>();
+        v.add(7);
+        v.add(8);
+        List<Integer> val = new ArrayList(v);
 
-        System.out.println();
-        System.out.println("After reversing Lineked List");
-        ListNode newHead = reverse(head);
-        temp = newHead;
-        while (temp != null) {
-            System.out.print(temp.val + " -> ");
-            temp = temp.next;
-        }
+        System.out.println(val);
     }
 
     private static ListNode reverse(ListNode head) {

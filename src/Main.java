@@ -1,4 +1,5 @@
 import graph.UnionFind;
+import hashtable.MyHashTable;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -60,9 +61,16 @@ public class Main {
         maxHeap.add(9);
         PriorityQueue<Integer> heapWithValues = new PriorityQueue<>(Arrays.asList(3,1,2));
 
-        System.out.println(heapWithValues);
-        System.out.println(maxHeap);
-        maxHeap.poll();
-        System.out.println(maxHeap);
+//        System.out.println(heapWithValues);
+//        System.out.println(maxHeap);
+//        maxHeap.poll();
+//        System.out.println(maxHeap);
+
+
+        MyHashTable map = new MyHashTable(10);
+        map.put(34, "Formula");
+        map.put(2, "Labrinth");
+
+        System.out.println(map.get(2));
     }
 }
