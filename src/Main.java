@@ -3,6 +3,7 @@ import hashtable.MyHashTable;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 
 public class Main {
@@ -67,10 +68,21 @@ public class Main {
 //        System.out.println(maxHeap);
 
 
-        MyHashTable map = new MyHashTable(10);
-        map.put(34, "Formula");
-        map.put(2, "Labrinth");
+//        MyHashTable map = new MyHashTable(10);
+//        map.put(34, "Formula");
+//        map.put(2, "Labrinth");
 
-        System.out.println(map.get(2));
+//        System.out.println(map.get(2));
+
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(1, 3);
+        map.put(2, 4);
+
+        System.out.println(map);
+
+        int val = map.get(1);
+
+        System.out.println(map);
     }
 }

@@ -91,7 +91,7 @@ public class MyHashTable {
      * @return
      */
     public String remove(Integer key) {
-        if (key == null || !Character.isDigit(key)) {
+        if (key == null) {
             throw new IllegalArgumentException("Key must be an Integer!!");
         }
         int bucketIndex = getBucketIndex(key);
