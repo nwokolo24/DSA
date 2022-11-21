@@ -1,6 +1,21 @@
 package set;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class MyHashSet {
+   static Set<Integer> s = new HashSet<>();
+
+    public static void main(String[] args) {
+        Map<Character, Integer> map = Map.of(
+                'b', 1,
+                'a', 1,
+                'l', 2,
+                'o', 2,
+                'n', 1
+        );
+    }
 }
 
 //class MyHashSet {
